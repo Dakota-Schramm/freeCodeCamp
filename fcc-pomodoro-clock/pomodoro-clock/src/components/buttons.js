@@ -1,5 +1,5 @@
-import Break from './break'
-import Session from './session'
+import Break from 'break'
+import Session from 'session'
 
 class Buttons extends React.Component {
     constructor(props) {

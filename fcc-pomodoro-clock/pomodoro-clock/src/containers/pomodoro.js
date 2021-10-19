@@ -1,5 +1,5 @@
-import Buttons from '../components/buttons'
-import Timer from '../components/timer'
+import Buttons from 'components/buttons'
+import Timer from 'components/timer'
 
 class Pomodoro extends React.Component {
     constructor(props) {
