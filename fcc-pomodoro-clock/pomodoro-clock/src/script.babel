@@ -1,3 +1,0 @@
-import Pomodoro from '/containers/pomodoro' 
-
-ReactDOM.render(<Pomodoro />, document.getElementById('clock-container'));
