@@ -1,14 +1,15 @@
+import React, { Component } from 'react';
 
-
-class Break extends React.Component {
+class Period extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        break: 5
+        break: this.props.breakLen
       }
       this.decrement = this.decrement.bind(this);
       this.increment = this.increment.bind(this);
      }
+
     decrement() {
       if (this.state.break != 0) {
         this.setState(state =>({
@@ -20,6 +21,7 @@ class Break extends React.Component {
           });
       }
     }
+
     increment() {
       this.setState(state =>({
         break: state.break + 1
@@ -28,13 +30,13 @@ class Break extends React.Component {
       
     render() {
       return (
-          <div id="break-label"> Break
-            <button id="break-decrement" onClick={this.decrement}></button>
-            <div id="break-length">{this.state.break}</div>
-            <button id="break-increment" onClick={this.increment}></button>
+          <div>
+            <button id={this.props.name + "-decrement"} onClick={this.decrement}></button>
+            <div id={this.props.name + "-length"}>{this.state.break}</div>
+            <button id={this.props.name + "-increment"} onClick={this.increment}></button>
          </div>
       )
     }
 }
 
-export default Break;
+export default Period;
