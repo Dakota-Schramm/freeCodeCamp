@@ -11,9 +11,9 @@ class Settings extends Component {
      }
     render() {
       return (
-        <div id="settings">
-          <Break />
-          <Session />
+        <div id="settings" className="row">
+          <div className ="col"><Break /></div>
+          <div className ="col"><Session /></div>
         </div>
       )
     }
