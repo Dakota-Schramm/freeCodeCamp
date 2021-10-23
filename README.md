@@ -2,7 +2,7 @@
 My personal projects for freeCodeCamp lessons.
 
 # How to view
-The websites are uploaded with src and dist directories. View the index file in the dist directory to see the website as it should appear on codepen.io.
+The websites are uploaded with src and dist directories. View the index file in the dist directory.
 
 # What I've completed so far
 Within the freeCodeCamp course selection, I have completed Responsive Web Design, Javascript Algorithms and Data Structures, and Front End Development Libraries.
