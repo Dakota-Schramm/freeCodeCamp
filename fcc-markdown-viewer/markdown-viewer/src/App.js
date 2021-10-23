@@ -26,7 +26,11 @@ export default function App() {
   const [text, setText] = useState(defaultString);
   return (
     <Container>
-      <h1>Markdown Viewer</h1>
+      <Row>
+        <Col className="lg-12">
+          <h1 style={{textAlign: "center"}}>Markdown Viewer</h1>
+        </Col>
+      </Row>
       <Row>
         <Col className="lg-6">
           <Editor value={text} setValue={setText}/>
