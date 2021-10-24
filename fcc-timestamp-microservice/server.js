@@ -27,23 +27,36 @@ app.get("/api/hello", function (req, res) {
 
 // ADD OTHER ENDPOINTS HERE
 // Endpoint for ?date
-app.get("/api/:date", (req, res) => {
-  // If date passed is Unix time
-  if ((req.params.date).match(/^[0-9]+$/) != null) {
-    req.params.date *= 1000
-  }
-  const date = new Date(req.params.date);
-  console.log(date);
+const timestampJson = (date) => {
   if (date.toString() !== 'Invalid Date') {
-    res.json({
-      unix: Math.floor(date.getTime() / 1000),
+    return {
+      unix: date.getTime(),
       utc: date.toUTCString()
-    });
+    }
   } else {
-    res.json({
+    return {
       error: date.toString()
-    })
+    }
   }
+}
+
+app.get("/api/", (req, res) => {
+  res.json(timestampJson(new Date()));
+})
+app.get("/api/:date", (req, res) => {
+  const queryDate = req.params.date
+  console.log(queryDate);
+
+  let date;
+  // If date passed is Unix time
+  if (queryDate.match(/^[0-9]+$/) != null) {
+    date = new Date(Number(req.params.date));
+    res.json(timestampJson(date))
+  } else {
+    date = new Date(queryDate);
+    res.json(timestampJson(date));
+  }
+  console.log(date);
 })
 
 
